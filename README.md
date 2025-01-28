@@ -115,7 +115,7 @@ HDP, GINI, daňová zátěž, atd. pro daný stát a rok.
 
 ### Příprava primární tabulky
 
-Při tvorbě primární tabulky jsem si nejprve vyselektovala relevantní data z tabulek czechia_payroll a czechia_price a připojila k nim jejich číselníky a zagregovala je po rocích, po kterých budeme tabulky spojovat.
+Při tvorbě primární tabulky jsem si nejprve vyselektovala relevantní data z tabulek czechia_payroll a czechia_price a připojila k nim jejich číselníky a zagregovala je po rocích, po kterých budeme tabulky spojovat. [TADY](https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql)
 
 #### czechia_price
 
@@ -227,7 +227,7 @@ CREATE TABLE IF NOT EXISTS t_katerina_janku_project_SQL_primary_final AS
 
 ### Příprava sekundární tabulky
 
-Sekundární tabulka bude obsahovat data s HDP, GINI koeficientem a populací dalších evropských států za stejné období, jako primární přehled pro Českou republiku. Všechny pro nás důležité informace jsou v tabulce economies, tabulka countries však obsahuje informace, které země patří do Evropy, spojíme tedy tabulky dohromady na sloupci country a vyfiltrujeme si pouze evropské státy a roky, které jsou v primárví tabulce.
+Sekundární tabulka bude obsahovat data s HDP, GINI koeficientem a populací dalších evropských států za stejné období, jako primární přehled pro Českou republiku. Všechny pro nás důležité informace jsou v tabulce economies, tabulka countries však obsahuje informace, které země patří do Evropy, spojíme tedy tabulky dohromady na sloupci country a vyfiltrujeme si pouze evropské státy a roky, které jsou v primárví tabulce.[TADY](https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql)
 
 ```
 CREATE TABLE IF NOT EXISTS t_katerina_janku_project_SQL_secondary_final AS
@@ -255,7 +255,7 @@ V poslední části se pokusíme odpovědět na naše výzkumné otázky.
 
 ## 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
-Odpověd na tuto otázku nalezneme v tomto SQL souboru.
+Odpověd na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaata23/Engeto/blob/main/SQL_otazka_1.sql).
 
 ![pokles_mzdy](media/mzdy_pokles.png)
 
@@ -265,7 +265,7 @@ Z výsledků vidíme, že přestože mzdy v průběhu let většinou rostly, exi
 
 ## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
 
-Odpověd na tuto otázku nalezneme v tomto SQL souboru.
+Odpověd na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaata23/Engeto/blob/main/SQL_otazka_2.sql).
 
 V roce 2006 (první srovnatelné období) byla průměrná mzda 19,536 Kč, chléb stál průměrně 16,12 Kč a mléko 14,44 Kč. Za průměrnou mzdu bylo tedy možné si koupit 1212 kilogramů chleba a 1353 litrů mléka. Naproti tomu v roce 2018 (poslední srovnatelné období) byla průměrná mzda 32,043 Kč, chléb stál průměrně 24,24 Kč a mléko 19,82 Kč. Za průměrnou mzdu bylo tedy možné si koupit 1322 kilogramů chleba a 1617 litrů mléka.
 
@@ -275,7 +275,7 @@ V roce 2018 bylo tedy možné za průměrnou mzdu koupit o 110 kilogramů cheba 
 
 ## 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 
-Odpověd na tuto otázku nalezneme v tomto SQL souboru.
+Odpověd na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaata23/Engeto/blob/main/SQL_otazka_3.sql).
 
 Nejpomaleji zdražují Cukr krystalový a Rajčata, která v průměru za celé sledované období spíše zlevňují (-1.92% a -0.72%).
 
@@ -287,7 +287,7 @@ Rajčata jsou zárověň produktem u kterého je nejvyšší meziroční pokles,
 
 ## 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
-Odpověd na tuto otázku nalezneme v tomto SQL souboru.
+Odpověd na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaata23/Engeto/blob/main/SQL_otazka_4.sql)
 
 Takový rok neexistuje, ceny potravin rostly většinou pomaleji než mzdy a někdy i klesaly. Největší meziroční nárust mezd byl v roce 2017 (10.12%), v tomto roce však mzdy také vzrostly (o 6.74%) a tak výsledný rozdíl nebyl tak velký (pouze 3.38%). Nejvíce rostly ceny v porovnání se mzdami v roce 2013 (o 5.23% více), což je zapříčiněno tím, že v tomto roce průměrná mzda stagnovala/mírně klesla. Naopak největší rozdíl mezi růstem cen a mezd byl v roce 2009, kdy byl růst mezd o 9.78% větší, jelikož ceny v tomto období klesaly (-6.41%).
 
@@ -295,7 +295,7 @@ Takový rok neexistuje, ceny potravin rostly většinou pomaleji než mzdy a ně
 
 ## 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
-Odpověd na tuto otázku nalezneme v tomto SQL souboru.
+Odpověd na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaata23/Engeto/blob/main/SQL_otazka_5.sql)
 
 V následující tabulce můžeme vidět porovnání růstu mezd, cen a HDP ve sledovaných letech.
 
