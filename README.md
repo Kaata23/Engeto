@@ -16,8 +16,8 @@ Aby bylo možno na tyto otázky odpovědět, tento projekt připraví robustní 
 
 Výstupem budou dvě tabulky v databázi, ze kterých se požadovaná data dají získat:
 
--   [t_katerina_janku_project_SQL_primary_final] (https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql) (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období) a
--   [t_katerina_janku_project_SQL_secondary_final] (https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql) (pro dodatečná data o dalších evropských státech).
+-   [t_katerina_janku_project_SQL_primary_final](https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql) (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období) a
+-   [t_katerina_janku_project_SQL_secondary_final](https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql) (pro dodatečná data o dalších evropských státech).
 
 Dále bude připravena sadu SQL dotazů, které nám pomohou zodpovědět na vytyčené výzkumné otázky.
 
@@ -115,7 +115,9 @@ HDP, GINI, daňová zátěž, atd. pro daný stát a rok.
 
 ### Příprava primární tabulky
 
-Při tvorbě primární tabulky jsem si nejprve vyselektovala relevantní data z tabulek czechia_payroll a czechia_price a připojila k nim jejich číselníky a zagregovala je po rocích, po kterých budeme tabulky spojovat. Finální SQL soubor naleznete [ZDE](https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql)
+Při tvorbě primární tabulky jsem si nejprve vyselektovala relevantní data z tabulek czechia_payroll a czechia_price a připojila k nim jejich číselníky a zagregovala je po rocích, po kterých budeme tabulky spojovat. 
+
+Finální SQL soubor naleznete [ZDE](https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql).
 
 #### czechia_price
 
@@ -227,7 +229,9 @@ CREATE TABLE IF NOT EXISTS t_katerina_janku_project_SQL_primary_final AS
 
 ### Příprava sekundární tabulky
 
-Sekundární tabulka bude obsahovat data s HDP, GINI koeficientem a populací dalších evropských států za stejné období, jako primární přehled pro Českou republiku. Všechny pro nás důležité informace jsou v tabulce economies, tabulka countries však obsahuje informace, které země patří do Evropy, spojíme tedy tabulky dohromady na sloupci country a vyfiltrujeme si pouze evropské státy a roky, které jsou v primárví tabulce. Finální SQL soubor naleznete [ZDE](https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql)
+Sekundární tabulka bude obsahovat data s HDP, GINI koeficientem a populací dalších evropských států za stejné období, jako primární přehled pro Českou republiku. Všechny pro nás důležité informace jsou v tabulce economies, tabulka countries však obsahuje informace, které země patří do Evropy, spojíme tedy tabulky dohromady na sloupci country a vyfiltrujeme si pouze evropské státy a roky, které jsou v primárví tabulce. 
+
+Finální SQL soubor naleznete [ZDE](https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql).
 
 ```
 CREATE TABLE IF NOT EXISTS t_katerina_janku_project_SQL_secondary_final AS
@@ -261,7 +265,7 @@ Odpověd na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaat
 
 ![zmena_mezd](media/zmena_mzdy.png)
 
-Z výsledků vidíme, že přestože mzdy v průběhu let většinou rostly, existují odvětví, ve kterých v některých letech klesaly. Největší pokles průměrných mezd byl v sektoru Peněžnictví a pojišťovnictví v roce 2013, kdy mzdy klesly o 8.83 % oproti roku 2012. V tom samém roce klesaly průměrké mzdy take ve většině jiných odvětvích (11 odvětví), zatímco ostatní zaznamemali jen mírný růst. K odvětvím, kde průměrné mzdy klesaly nejčastěji za sledované období patří Těžba a dobývání (4x) a Výroba a rozvod elektřiny, plynu, tepla a klimatiz. Vzduchu (3x). Celkově existují jen tři odvětví, které ve sledovaném období nezaznamenali pokles ani v jednom roce a to jsou sektory Zpracovatelský průmysl, Zdravotní a sociální péče a Ostatní činnosti.
+Z výsledků vidíme, že přestože mzdy v průběhu let většinou rostly, existují odvětví, ve kterých v některých letech klesaly. Největší pokles průměrných mezd byl v sektoru *Peněžnictví a pojišťovnictví* v roce 2013, kdy mzdy klesly o 8.83 % oproti roku 2012. V tom samém roce klesaly průměrké mzdy take ve většině jiných odvětvíc (11 odvětví), zatímco ostatní odvětví zaznamemaly jen mírný růst. K odvětvím, kde průměrné mzdy klesaly nejčastěji za sledované období patří *Těžba a dobývání* (4x) a *Výroba a rozvod elektřiny, plynu, tepla a klimatiz. Vzduchu* (3x). Celkově existují jen tři odvětví, které ve sledovaném období nezaznamenali pokles ani v jednom roce a to jsou sektory *Zpracovatelský průmysl*, *Zdravotní a sociální péče* a *Ostatní činnosti*.
 
 ## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
 
@@ -277,7 +281,7 @@ V roce 2018 bylo tedy možné za průměrnou mzdu koupit o 110 kilogramů cheba 
 
 Odpověd na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaata23/Engeto/blob/main/SQL_otazka_3.sql).
 
-Nejpomaleji zdražují Cukr krystalový a Rajčata, která v průměru za celé sledované období spíše zlevňují (-1.92% a -0.72%).
+Nejpomaleji zdražují *Cukr krystalový* a *Rajčata*, která v průměru za celé sledované období spíše zlevňují (-1.92% a -0.72%).
 
 ![rust_cen_kategorii_potravin](media/1d4cc8cedf96297fbfe29e0db0834f86.png)
 
