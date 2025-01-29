@@ -303,7 +303,9 @@ Odpověď na tuto otázku nalezneme v tomto [SQL souboru](https://github.com/Kaa
 
 V následující tabulce můžeme vidět porovnání růstu mezd, cen a HDP ve sledovaných letech.
 
-![porovnani_rustu_s_hdp](media/6e68569dd4ad3a39e8973f4187f3f5b5.png)
+![porovnani_rustu_s_hph](media/6e68569dd4ad3a39e8973f4187f3f5b5.png)
+
+![porovnani_rustu_cen a mezd s_hph](media/dph_ceny_mzdy.png)
 
 Z těchto dat jsme si vypočítali korelační koeficienty:
 
