@@ -16,8 +16,8 @@ Aby bylo možno na tyto otázky odpovědět, tento projekt připraví robustní 
 
 Výstupem budou dvě tabulky v databázi, ze kterých se požadovaná data dají získat:
 
--   t_katerina_janku_project_SQL_primary_final (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období) a
--   t_katerina_janku_project_SQL_secondary_final (pro dodatečná data o dalších evropských státech).
+-   [t_katerina_janku_project_SQL_primary_final] (https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql) (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období) a
+-   [t_katerina_janku_project_SQL_secondary_final] (https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql) (pro dodatečná data o dalších evropských státech).
 
 Dále bude připravena sadu SQL dotazů, které nám pomohou zodpovědět na vytyčené výzkumné otázky.
 
@@ -115,7 +115,7 @@ HDP, GINI, daňová zátěž, atd. pro daný stát a rok.
 
 ### Příprava primární tabulky
 
-Při tvorbě primární tabulky jsem si nejprve vyselektovala relevantní data z tabulek czechia_payroll a czechia_price a připojila k nim jejich číselníky a zagregovala je po rocích, po kterých budeme tabulky spojovat. [TADY](https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql)
+Při tvorbě primární tabulky jsem si nejprve vyselektovala relevantní data z tabulek czechia_payroll a czechia_price a připojila k nim jejich číselníky a zagregovala je po rocích, po kterých budeme tabulky spojovat. Finální SQL soubor naleznete [ZDE](https://github.com/Kaata23/Engeto/blob/main/sql_primary_final.sql)
 
 #### czechia_price
 
@@ -227,7 +227,7 @@ CREATE TABLE IF NOT EXISTS t_katerina_janku_project_SQL_primary_final AS
 
 ### Příprava sekundární tabulky
 
-Sekundární tabulka bude obsahovat data s HDP, GINI koeficientem a populací dalších evropských států za stejné období, jako primární přehled pro Českou republiku. Všechny pro nás důležité informace jsou v tabulce economies, tabulka countries však obsahuje informace, které země patří do Evropy, spojíme tedy tabulky dohromady na sloupci country a vyfiltrujeme si pouze evropské státy a roky, které jsou v primárví tabulce.[TADY](https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql)
+Sekundární tabulka bude obsahovat data s HDP, GINI koeficientem a populací dalších evropských států za stejné období, jako primární přehled pro Českou republiku. Všechny pro nás důležité informace jsou v tabulce economies, tabulka countries však obsahuje informace, které země patří do Evropy, spojíme tedy tabulky dohromady na sloupci country a vyfiltrujeme si pouze evropské státy a roky, které jsou v primárví tabulce. Finální SQL soubor naleznete [ZDE](https://github.com/Kaata23/Engeto/blob/main/sql_secondary_final.sql)
 
 ```
 CREATE TABLE IF NOT EXISTS t_katerina_janku_project_SQL_secondary_final AS
